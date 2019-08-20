@@ -1,0 +1,17 @@
+{
+  "name": "base64coder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node run --inspect",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.7.2",
+    "@waves/waves-transactions": "^3.16.3",
+    "node-fetch": "^2.6.0"
+  }
+}
