@@ -33,7 +33,7 @@ func main() {
 		bv := []byte(images[i])
 		hasher := sha256.New()
 		hasher.Write(bv)
-		body := Pic{base64.URLEncoding.EncodeToString(hasher.Sum(nil)), split(images[i], 1e5)}
+		body := Pic{base64.URLEncoding.EncodeToString(hasher.Sum(nil)), split(images[i], 1e5/2)}
 		data = append(data, body)
 	}
 

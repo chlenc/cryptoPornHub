@@ -12,6 +12,7 @@ const parseKey = (key: string) => {
 const getData = async () => {
     let response = await fetch('https://testnode1.wavesnodes.com/addresses/data/3N8GiFAboHyNvn5EpTk9W8KKbotJSW96ev1')
     const out = {};
+    const test = {};
     if (response.ok) {
         let json = await response.json();
         json.forEach(({key, value}) => {
@@ -26,6 +27,8 @@ const getData = async () => {
     }
     Object.entries(out).map(([key, value]) => {
         console.log(key === Object.values((value as {hash: string, content: string[]}).content).map(v => v).join(''))
+        console.log(key === Object.values((value as {hash: string, content: string[]}).content).map(v => v).join(''))
+
     })
 }
 
