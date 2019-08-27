@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node run --inspect",
+    "decode": "ts-node decoder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@types/node": "^12.7.2",
     "@waves/waves-transactions": "^3.16.3",
+    "js-sha256": "^0.9.0",
     "node-fetch": "^2.6.0"
   }
 }

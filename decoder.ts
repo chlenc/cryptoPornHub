@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { sha256 } from 'js-sha256';
 
 const parseKey = (key: string) => {
     const match = key.match(/chunk_(\d+)_from_(.*)$/);
@@ -10,7 +11,7 @@ const parseKey = (key: string) => {
 
 
 const getData = async () => {
-    let response = await fetch('https://testnode1.wavesnodes.com/addresses/data/3N8GiFAboHyNvn5EpTk9W8KKbotJSW96ev1')
+    let response = await fetch('https://testnode1.wavesnodes.com/addresses/data/3NCoM7mcr2Y574DNHP74owQXMGKkX3CLB9y');
     const out = {};
     const test = {};
     if (response.ok) {
@@ -25,9 +26,10 @@ const getData = async () => {
     } else {
         alert("Ошибка HTTP: " + response.status);
     }
+
     Object.entries(out).map(([key, value]) => {
-        console.log(key === Object.values((value as {hash: string, content: string[]}).content).map(v => v).join(''))
-        console.log(key === Object.values((value as {hash: string, content: string[]}).content).map(v => v).join(''))
+
+        console.log(key === sha256(Object.values((value as {hash: string, content: string[]}).content).map(v => v).join('')))
 
     })
 }
