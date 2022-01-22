@@ -14,6 +14,6 @@
     "@types/node": "^12.7.2",
     "@waves/waves-transactions": "^3.16.3",
     "js-sha256": "^0.9.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   }
 }
